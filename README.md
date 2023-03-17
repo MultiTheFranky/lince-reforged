@@ -45,13 +45,10 @@
  cd lince
 ```
 
-3. Edit the setup script
+3. Edit the setup (setup.bat) script
 
-```bash
- nano setup.sh
-```
 
-4. Edit the DISK, the ARMA3_DIR, P_DRIVE_DIR and the PROJECT_NAME variables and save
+4. Edit the DISK, the ARMA3_DIR, P_DRIVE_DIR and the PROJECT_NAME variables as you want and save
 
 ```bash
  DISK="C:"
@@ -63,7 +60,13 @@
 5. Execute the setup script
 
 ```bash
- ./setup.sh
+ .\setup.bat
+```
+
+## Development
+
+```bash
+ .\debug.bat
 ```
 
 
