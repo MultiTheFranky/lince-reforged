@@ -63,6 +63,19 @@
  .\setup.bat
 ```
 
+6. Delete the cloned repository
+
+```bash
+ cd ..
+ rmdir /s /q lince
+```
+
+7. Go to P:\z\lince and execute the debug script
+
+```bash
+ .\debug.bat
+```
+
 ## Development
 
 ```bash
