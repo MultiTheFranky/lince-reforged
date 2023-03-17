@@ -15,8 +15,8 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v2
-    - name: Build with HEMTT
-      uses: gruppe-adler/action-release-with-hemtt@2.2.0
+    - name: Release with HEMTT - MultiTheFranky
+      uses: MultiTheFranky/action-release-with-hemtt@0.0.5
       id: build
     - name: Upload asset
       uses: shogo82148/actions-upload-release-asset@v1
