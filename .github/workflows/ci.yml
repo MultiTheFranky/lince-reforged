@@ -24,12 +24,12 @@ jobs:
       continue-on-error: true # No failure due to many false-positives
   hemtt:
     name: Build with HEMTT
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
     - name: Release with HEMTT - MultiTheFranky
-      uses: MultiTheFranky/action-release-with-hemtt@0.0.2
+      uses: MultiTheFranky/action-release-with-hemtt@0.0.3
       id: build
     - name: Upload artifact
       uses: actions/upload-artifact@v3
