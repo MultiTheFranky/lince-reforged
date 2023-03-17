@@ -1,0 +1,12 @@
+name = "Lince Reforged";
+picture = "logo_lince_ca.paa";
+actionName = "GitHub";
+action = "https://github.com/MultiTheFranky/lince-reforged";
+description = "Lince Reforged";
+logo = "logo_lince_ca.paa";
+logoOver = "logo_lince_ca.paa";
+tooltip = "Lince Reforged";
+tooltipOwned = "Lince Reforged Owned";
+overview = "Lince Reforged";
+author = "Lince Team";
+overviewPicture = "logo_lince_ca.paa";
