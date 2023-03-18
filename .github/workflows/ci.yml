@@ -25,6 +25,7 @@ jobs:
   hemtt:
     name: Build with HEMTT
     runs-on: ubuntu-latest
+    needs: [validate, lint]
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
