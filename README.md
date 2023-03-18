@@ -82,5 +82,9 @@
  .\debug.bat
 ```
 
-
-
+Execute 
+```sqf
+[] call ACE_PREP_RECOMPILE;
+```
+every time that you ant to recompile the functions.
+Or you can setup a keybind on custom action 20 on Arma 3.
