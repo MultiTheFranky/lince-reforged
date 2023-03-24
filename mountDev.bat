@@ -1,3 +1,4 @@
+@echo off
 rem =========ZONE TO EDIT========
 rem Define Disk
 set DISK=D:

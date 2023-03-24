@@ -42,7 +42,7 @@ class RscTitles {
             class ItemImage1: RscPicture
             {
                 idc = 8001;
-                text = "\A3\EditorPreviews_F\Data\CfgVehicles\B_supplyCrate_F.jpg";
+                text = "";
                 x="safeZoneX + safeZoneW + 0.1";
                 y="safeZoneY + safeZoneH * 0.44481482";
                 w="safeZoneW * 0.0775";
@@ -53,7 +53,7 @@ class RscTitles {
             class ItemImage2: RscPicture
             {
                 idc = 8002;
-                text = "\A3\EditorPreviews_F\Data\CfgVehicles\B_supplyCrate_F.jpg";
+                text = "";
                 x="safeZoneX + safeZoneW + 0.1";
                 y="safeZoneY + safeZoneH * 0.44481482";
                 w="safeZoneW * 0.0775";
@@ -63,7 +63,7 @@ class RscTitles {
             class ItemImage3: RscPicture
             {
                 idc = 8003;
-                text = "\A3\EditorPreviews_F\Data\CfgVehicles\B_supplyCrate_F.jpg";
+                text = "";
                 x="safeZoneX + safeZoneW + 0.1";
                 y="safeZoneY + safeZoneH * 0.44481482";
                 w="safeZoneW * 0.0775";
@@ -73,7 +73,7 @@ class RscTitles {
             class ItemImage4: RscPicture
             {
                 idc = 8004;
-                text = "\A3\EditorPreviews_F\Data\CfgVehicles\B_supplyCrate_F.jpg";
+                text = "";
                 x="safeZoneX + safeZoneW + 0.1";
                 y="safeZoneY + safeZoneH * 0.44481482";
                 w="safeZoneW * 0.0775";
@@ -83,7 +83,7 @@ class RscTitles {
             class ItemImage5: RscPicture
             {
                 idc = 8005;
-                text = "\A3\EditorPreviews_F\Data\CfgVehicles\B_supplyCrate_F.jpg";
+                text = "";
                 x="safeZoneX + safeZoneW + 0.1";
                 y="safeZoneY + safeZoneH * 0.44481482";
                 w="safeZoneW * 0.0775";
@@ -93,7 +93,7 @@ class RscTitles {
             class ItemImage6: RscPicture
             {
                 idc = 8006;
-                text = "\A3\EditorPreviews_F\Data\CfgVehicles\B_supplyCrate_F.jpg";
+                text = "";
                 x="safeZoneX + safeZoneW + 0.1";
                 y="safeZoneY + safeZoneH * 0.44481482";
                 w="safeZoneW * 0.0775";
@@ -103,7 +103,7 @@ class RscTitles {
             class ItemImage7: RscPicture
             {
                 idc = 8007;
-                text = "\A3\EditorPreviews_F\Data\CfgVehicles\B_supplyCrate_F.jpg";
+                text = "";
                 x="safeZoneX + safeZoneW + 0.1";
                 y="safeZoneY + safeZoneH * 0.44481482";
                 w="safeZoneW * 0.0775";
@@ -113,7 +113,7 @@ class RscTitles {
             class ItemImage8: RscPicture
             {
                 idc = 8008;
-                text = "\A3\EditorPreviews_F\Data\CfgVehicles\B_supplyCrate_F.jpg";
+                text = "";
                 x="safeZoneX + safeZoneW + 0.1";
                 y="safeZoneY + safeZoneH * 0.44481482";
                 w="safeZoneW * 0.0775";
@@ -123,7 +123,7 @@ class RscTitles {
             class ItemImage9: RscPicture
             {
                 idc = 8009;
-                text = "\A3\EditorPreviews_F\Data\CfgVehicles\B_supplyCrate_F.jpg";
+                text = "";
                 x="safeZoneX + safeZoneW + 0.1";
                 y="safeZoneY + safeZoneH * 0.44481482";
                 w="safeZoneW * 0.0775";
@@ -133,7 +133,7 @@ class RscTitles {
             class ItemImage10: RscPicture
             {
                 idc = 8010;
-                text = "\A3\EditorPreviews_F\Data\CfgVehicles\B_supplyCrate_F.jpg";
+                text = "";
                 x="safeZoneX + safeZoneW + 0.1";
                 y="safeZoneY + safeZoneH * 0.44481482";
                 w="safeZoneW * 0.0775";

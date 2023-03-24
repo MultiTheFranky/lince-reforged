@@ -22,7 +22,6 @@ private _display = uiNamespace getVariable "RscGachapon";
 // get all the entries of CfgWeapons
 private _weapons = configFile >> "CfgWeapons";
 private _hashMapWeapons = createHashMap;
-diag_log "test";
 
 // Loop every entry and add it to the hashmap
 private _blackListItems = ["dogtag"];
