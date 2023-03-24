@@ -88,28 +88,19 @@ class CfgVehicles
         hiddenSelectionsTextures[] = {QPATHTOF(data\urban.paa)};
     };
 
-    class Betis_Supercup:  GVAR(Desert) { 
+    class C_man_p_beggar_F;
+    class GVAR(Betis):  C_man_p_beggar_F { 
         displayName = "Betis"; // TODO: Localize
-        model = "\A3\characters_f_gamma\Guerrilla\ig_guerrilla1_1.p3d"; //NATO Rolled Up Sleeves 
+        faction = "LINCE";
+        author = "Compania Lince"; // TODO: Localize
         uniformClass = QEGVAR(uniforms,Betis);
-        backpack = ""; 
-        hiddenSelections[] = {"Camo1","Camo2"}; 
-        hiddenSelectionsTextures[] = {QPATHTOF(data\betis_1.paa),QPATHTOF(data\betis_2.paa)}; 
+        hiddenSelections[] = {"Camo"}; 
+        hiddenSelectionsTextures[] = {QPATHTOF(data\betis_1.paa)}; 
     };
 
-    class C_man_p_beggar_F;
-    class sporting_unit: C_man_p_beggar_F {
-        author = "Compania Lince"; // TODO: Localize
-        _generalMacro = "C_man_p_beggar_F"; 
-        scope = 2; 
+    class GVAR(Sporting): GVAR(Betis) {
         displayName = "Sporting"; // TODO: Localize
-        identityTypes[] = {"Head_NATO", "G_NATO_default"}; 
-        genericNames = "NATOMen"; 
-        faction = "LINCE";
-        model = "\A3\characters_F\civil\c_poor.p3d"; //NATO Rolled Up Sleeves 
         uniformClass = QEGVAR(uniforms,Sporting);
-        backpack = ""; 
-        hiddenSelections[] = {"Camo"}; 
         hiddenSelectionsTextures[] = {QPATHTOF(data\sporting.paa)}; 
     };
 };
