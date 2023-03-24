@@ -1,7 +1,8 @@
 class CfgWeapons
 {
     class ItemCore; 
-    class UniformItem; 
+    class UniformItem;
+    class U_C_Poor_1;
     class Uniform_Base: ItemCore 
     { 
         class ItemInfo; 
@@ -77,4 +78,29 @@ class CfgWeapons
             uniformClass = QEGVAR(units,Urban);
         }; 
     };
+
+    class GVAR(Betis): Uniform_Base 
+    { 
+        scope = 2; 
+        displayName = "Betis Supercopa (Desierto)"; // TODO: Localize
+        picture = "\A3\Characters_F\data\ui\icon_U_B_CombatUniform_mcam_CA.paa"; 
+        model = "\A3\characters_f_gamma\Guerrilla\ig_guerrilla1_1.p3d"; 
+        class ItemInfo : UniformItem { 
+            uniformClass = QEGVAR(units,Betis); 
+            containerClass = "Supply50"; 
+            mass = 50;
+        }; 
+    }; 
+    class GVAR(Sporting): U_C_Poor_1 
+    { 
+        scope = 2; 
+        displayName = "Sporting"; // TODO: Localize
+        picture = "\A3\characters_f\data\ui\icon_U_C_Poor_1_ca.paa"; 
+        model = "\A3\characters_F\civil\c_poor.p3d"; 
+        class ItemInfo : UniformItem { 
+            uniformClass = QEGVAR(units,Sporting);
+            containerClass = "Supply50"; 
+            mass = 50; 
+        }; 
+    }; 
 };
