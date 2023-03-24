@@ -105,7 +105,7 @@ class CfgVehicles
         displayName = "Sporting"; // TODO: Localize
         identityTypes[] = {"Head_NATO", "G_NATO_default"}; 
         genericNames = "NATOMen"; 
-        faction = "Compania Lince";
+        faction = "LINCE";
         model = "\A3\characters_F\civil\c_poor.p3d"; //NATO Rolled Up Sleeves 
         uniformClass = QEGVAR(uniforms,Sporting);
         backpack = ""; 
