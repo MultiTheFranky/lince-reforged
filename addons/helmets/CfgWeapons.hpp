@@ -222,4 +222,18 @@ class CfgWeapons {
             passThrough = 0.65;
         };
     };
+    class GVAR(HelicopterPilotBLK): H_PilotHelmetHeli_B
+    {
+        scope=2;
+        displayName="Casco de Piloto (Ala rotatoria) Blitz"; // TODO: Localize 
+        picture="\A3\characters_f\Data\UI\icon_H_Pilot_Helmet_Heli_B_CA.paa";
+        hiddenSelectionsTextures[]=
+        {
+            QPATHTOF(data\helmet_heli_blk_co.paa)
+        };
+        hiddenSelectionsMaterials[]=
+        {
+            QPATHTOF(data\helmet_heli_blk.rvmat)
+        };
+    };
 };
