@@ -29,7 +29,12 @@
 
 ## Requirements
 
-- Git (https://git-scm.com/downloads)
+-   Git (https://git-scm.com/downloads)
+
+### Extensions
+
+-   Golang compiler (https://golang.org/dl/) 1.19
+-   TDD gcc compiler (https://sourceforge.net/projects/tdm-gcc/)
 
 ## Setup
 
@@ -46,7 +51,6 @@
 ```
 
 3. Edit the setup (setup.bat) script
-
 
 4. Edit the DISK, the ARMA3_DIR, P_DRIVE_DIR and the PROJECT_NAME variables as you want and save
 
@@ -70,7 +74,7 @@
  rmdir /s /q lince
 ```
 
-7. Go to P:\z\lince and execute the debug script
+7. Go to `P:\z\lince` or `Arma3Projects\lince` and execute the debug script
 
 ```bash
  .\debug.bat
@@ -82,9 +86,11 @@
  .\debug.bat
 ```
 
-Execute 
+Execute
+
 ```sqf
 [] call ACE_PREP_RECOMPILE;
 ```
-every time that you ant to recompile the functions.
+
+every time that you want to recompile the functions.
 Or you can setup a keybind on custom action 20 on Arma 3.

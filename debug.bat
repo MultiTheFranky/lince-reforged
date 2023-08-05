@@ -9,6 +9,11 @@ rem =============================
 rem create a loop 
 :fullLoop
 
+rem Execute buildExtensions.bat
+call buildExtensions.bat
+
+:loopBuildRestartOnly
+
 rem Execute Hemtt Dev
 hemtt.exe dev
 
@@ -40,14 +45,16 @@ rem close the monitoring script
 taskkill /fi "WindowTitle eq Arma 3 Monitoring - monitoringLogs.bat" >nul
 
 rem Restart options
-ECHO 1.Rebuild and Restart
-ECHO 2.Restart only
-ECHO 3.Close
+ECHO 1.Build Extensions, Rebuild and Restart
+ECHO 2.Rebuild and Restart
+ECHO 3.Restart only
+ECHO 4.Close
 ECHO.
 
-CHOICE /C 123 /M "Select an option: "
-IF ERRORLEVEL 3 GOTO stopDebug
-IF ERRORLEVEL 2 GOTO loopRestartOnly
+CHOICE /C 1234 /M "Select an option: "
+IF ERRORLEVEL 4 GOTO stopDebug
+IF ERRORLEVEL 3 GOTO loopRestartOnly
+IF ERRORLEVEL 2 GOTO loopBuildRestartOnly
 IF ERRORLEVEL 1 GOTO fullLoop
 
 :stopDebug

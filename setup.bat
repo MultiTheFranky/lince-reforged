@@ -73,7 +73,7 @@ mklink /J P:\z\ace %EXTERNAL_SOURCE_DIR%\ace
 echo Created symlink %ARMA3_DIR%\z\@ace to %EXTERNAL_SOURCE_DIR%\ace and P:\z\ace to %EXTERNAL_SOURCE_DIR%\ace
 
 rem Create the folder of the project on ExternalSource if it does not exist
-set PROJECT_DIR=%EXTERNAL_SOURCE_DIR%\%PROJECT_NAME%
+set PROJECT_DIR=%EXTERNAL_SOURCE_DIR%\..\%PROJECT_NAME%
 if not exist %PROJECT_DIR% (
   echo %PROJECT_DIR% directory does not exist, creating...
   mkdir %PROJECT_DIR%
@@ -86,7 +86,7 @@ echo Creating project symlinks...
 rem Do the symlink to the Arma 3 directory
 mklink /J %ARMA3_DIR%\z\%PROJECT_NAME% %PROJECT_DIR%\.hemttout\dev
 mklink /J P:\z\%PROJECT_NAME% %PROJECT_DIR%
-echo Created symlink %ARMA3_DIR%\z\%PROJECT_NAME% to %PROJECT_DIR% and P:\z\%PROJECT_NAME% to %PROJECT_DIR%
+echo Created symlink %ARMA3_DIR%\z\%PROJECT_NAME% to %PROJECT_DIR%\.hemttout\dev and P:\z\%PROJECT_NAME% to %PROJECT_DIR%
 
 echo Done.
 pause
