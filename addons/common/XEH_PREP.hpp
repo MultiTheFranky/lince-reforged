@@ -1,1 +1,2 @@
 PREP(keyHandlerPrepRecompile);
+PREP(minifyString);

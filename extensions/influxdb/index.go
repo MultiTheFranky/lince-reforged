@@ -28,7 +28,7 @@ func runExtensionCallback(name *C.char, function *C.char, data *C.char) C.int {
 
 //export goRVExtensionVersion
 func goRVExtensionVersion(output *C.char, outputsize C.size_t) {
-	result := C.CString("Prometheus - Version 1.0")
+	result := C.CString("Lince - InfluxDB - Version 1.0")
 	defer C.free(unsafe.Pointer(result))
 	var size = C.strlen(result) + 1
 	if size > outputsize {
@@ -39,6 +39,12 @@ func goRVExtensionVersion(output *C.char, outputsize C.size_t) {
 
 // Save writeAPI as global variables to be used in goRVExtensionArgs data function
 var writeAPI api.WriteAPI
+
+type Data struct{
+	key string
+	description string
+	value float64
+}
 
 //export goRVExtensionArgs
 func goRVExtensionArgs(output *C.char, outputsize C.size_t, input *C.char, argv **C.char, argc C.int) {
@@ -64,26 +70,24 @@ func goRVExtensionArgs(output *C.char, outputsize C.size_t, input *C.char, argv 
 		writeAPI = client.WriteAPI(parseStringParam(params[2]), parseStringParam(params[3]))
 		returnString(output, outputsize, fmt.Sprintf("INFO: Created connection to InfluxDB on %s", params[0]))
 	case "data": // data <key> <value>
-		if len(params) != 2 {
-			returnString(output, outputsize, fmt.Sprintf("ERROR: Invalid number of parameters for data. Expected 2 <key> <value>, got %d", len(params)))
-			return
-		}
 		// Check if the writeAPI is initialized
 		if writeAPI == nil {
 			returnString(output, outputsize, fmt.Sprintf("ERROR: InfluxDB is not initialized. Please call start first"))
 			return
 		}
-		// Parse value to float64
-		value, err := strconv.ParseFloat(parseStringParam(params[1]), 64)
+		data, err := parseData(params)
 		if err != nil {
-			returnString(output, outputsize, fmt.Sprintf("ERROR: Invalid value for data. Expected float64, got %s", params[1]))
+			returnString(output, outputsize, fmt.Sprintf("ERROR: %s", err))
 			return
 		}
-		// Create point
-		p := influxdb2.NewPoint(parseStringParam(params[0]), nil, map[string]interface{}{"value": value}, time.Now())
-		// Write point
-		writeAPI.WritePoint(p)
-		returnString(output, outputsize, fmt.Sprintf("INFO: Added data %s %s %f", params[0], params[1], value))
+		// Loop through data and create points
+		for _, d := range data {
+			// Write point
+			writeAPI.WritePoint(
+				influxdb2.NewPoint(d.key, nil, map[string]interface{}{"value": d.value, "description": d.description}, time.Now()),
+			)
+		}
+		returnString(output, outputsize, fmt.Sprintf("INFO: Added data %s", parseStringParam(strings.Join(params, ", "))))
 	default:
 		returnString(output, outputsize, fmt.Sprintf("ERROR: Invalid function %s", function))
 	}
@@ -113,6 +117,25 @@ func returnString(output *C.char, outputsize C.size_t, result string) {
 //function to parse string parameters to remove all quotes
 func parseStringParam(param string) string {
 	return strings.ReplaceAll(param, "\"", "")
+}
+
+func parseData(params []string) (data []Data, err error) {
+	// Every parameter is a string splited by :
+	data = make([]Data, len(params))
+	for i, param := range params {
+		// Split the string by :
+		splited := strings.Split(param, ":")
+		if len(splited) != 3 {
+			return data, fmt.Errorf("Invalid number of parameters for data. Expected 3 <key> <description> <value>, got %d", len(splited))
+		}
+		data[i].key = parseStringParam(splited[0])
+		data[i].description = parseStringParam(splited[1])
+		data[i].value, err = strconv.ParseFloat(parseStringParam(splited[2]), 64)
+		if err != nil {
+			return data, fmt.Errorf("Invalid value for data. Expected float64, got %s", splited[2])
+		}
+	}
+	return data, nil
 }
 
 func main() {}
