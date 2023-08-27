@@ -49,6 +49,13 @@ jobs:
     - name: Setup steamcmd
       id: steamcmd
       uses: CyberAndrii/setup-steamcmd@v1
+
+    - name: Generate auth code
+      id: generate
+      uses: CyberAndrii/steam-totp@v1
+      with:
+        shared_secret: ${{ secrets.STEAM_SHARE_SECRET }}
+      continue-on-error: true
         
     - name: Unzip builded mod
       run: unzip -o ${{ steps.build.outputs.zip_path }} -d ${{ steps.build.outputs.release_path }}
