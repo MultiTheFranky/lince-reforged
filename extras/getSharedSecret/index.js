@@ -14,9 +14,13 @@ client.on("loggedOn", function () {
 
         const code = prompt("Activation code: ");
 
-        await finalizeTwoFactor(
-            Buffer.from(response.share_secret, "base64"),
-            code
+        await client.finalizeTwoFactor(
+            Buffer.from(response.shared_secret, "base64"),
+            code,
+            function (error, response) {
+                console.log(error);
+                console.log(response);
+            }
         );
     });
 });
